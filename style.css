@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600&display=swap');
+
+
+:root {
+
+    --pink: #f4b8c9;
+    --pink-light: #f9dce5;
+
+    --cream: #fff8ef;
+
+    --blue: #c9dff0;
+
+    --brown: #4d3b43;
+
+    --white: #fffdfb;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    color: var(--brown);
+
+    background: var(--cream);
+
+    font-family: 'Poppins', sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .25;
+
+    background-image:
+        radial-gradient(#d99daf 0.7px, transparent 0.7px);
+
+    background-size: 18px 18px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+.screen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+.terminal {
+
+    width: min(720px, 100%);
+
+    background: #30272d;
+
+    color: #fcecf2;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 25px 70px rgba(100, 50, 70, .25);
+
+    font-family: 'DM Mono', monospace;
+}
+
+
+.terminal-top {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-bottom: 25px;
+}
+
+
+.terminal-top span {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #f2b7c8;
+}
+
+
+.terminal-top span:nth-child(2) {
+    background: #e9d7b5;
+}
+
+
+.terminal-top span:nth-child(3) {
+    background: #b8d8e9;
+}
+
+
+.terminal p {
+
+    line-height: 1.8;
+
+    margin: 10px 0;
+}
+
+
+.pink {
+    color: #f6b8cc;
+}
+
+
+.blue {
+    color: #bcdff0;
+}
+
+
+.cursor {
+
+    display: inline-block;
+
+    width: 8px;
+
+    height: 17px;
+
+    background: #f6b8cc;
+
+    animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+.start-btn {
+
+    margin-top: 20px;
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: var(--pink);
+
+    color: var(--brown);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    text-align: center;
+
+    padding: 90px 20px 50px;
+}
+
+
+.eyebrow {
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #a56d7f;
+}
+
+
+.hero h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(48px, 10vw, 90px);
+
+    line-height: .95;
+
+    margin: 15px 0;
+}
+
+
+.hero p:last-child {
+
+    opacity: .7;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+
+    width: min(1050px, 92%);
+
+    margin: auto;
+
+    padding: 65px 0;
+}
+
+
+.card,
+.letter-card {
+
+    background: rgba(255,255,255,.75);
+
+    border: 1px solid white;
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 20px 60px rgba(120,80,90,.12);
+
+    backdrop-filter: blur(8px);
+}
+
+
+h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(30px,5vw,48px);
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.stats div {
+
+    background: rgba(255,255,255,.65);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+
+.stats strong {
+
+    display: block;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 25px;
+}
+
+
+.stats small {
+
+    font-size: 11px;
+
+    opacity: .65;
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.memories {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+
+.photo {
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 35px rgba(100,60,80,.15);
+
+    transition: .3s;
+}
+
+
+.photo img {
+
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+}
+
+
+.photo:hover {
+
+    transform: translateY(-7px)
+               rotate(0deg) !important;
+}
+
+
+.photo-1 {
+    transform: rotate(-2deg);
+}
+
+
+.photo-2 {
+    transform: rotate(2deg);
+}
+
+
+.photo-3 {
+    transform: rotate(1deg);
+}
+
+
+.photo-4 {
+    transform: rotate(-2deg);
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+
+    max-width: 800px;
+
+    margin: 30px auto 0;
+
+    padding:
+        clamp(25px, 5vw, 55px);
+
+    background: #fffdf8;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 18px 55px rgba(100,70,60,.12);
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+
+.opening {
+
+    font-family: 'Playfair Display', serif;
+
+    font-style: italic;
+
+    font-size: 24px;
+}
+
+
+.signature {
+
+    font-family: 'Playfair Display', serif;
+
+    font-style: italic;
+
+    font-size: 23px;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+}
+
+
+.music button {
+
+    width: 46px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--pink);
+
+    color: var(--brown);
+
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending {
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+
+.heart {
+
+    font-size: 48px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes float {
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 11px;
+
+    opacity: .45;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .memories {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .terminal {
+
+        padding: 22px;
+
+    }
+
+
+    .letter-card,
+    .card {
+
+        padding: 22px;
+
+    }
+
+}
